@@ -120,6 +120,11 @@ Then use:
 - `examples/output/ios_legal_draft_checklist.md`
 - `examples/ios_legal_draft_workflow.md`
 
+The sample includes recent-change-sensitive themes such as:
+
+- `消費税法`
+- `特定受託事業者に係る取引の適正化等に関する法律` (freelancer protection)
+
 ## Validation
 
 ```bash

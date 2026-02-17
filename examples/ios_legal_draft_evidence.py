@@ -46,6 +46,16 @@ LAW_SCOPES = [
         "law_title": "特定商取引に関する法律",
         "why_to_check": "有料プラン・継続課金の表示義務や通信販売表示の必要性を確認する。",
     },
+    {
+        "topic": "Tax handling for paid features",
+        "law_title": "消費税法",
+        "why_to_check": "有料機能・課金時の税務説明や表示整合の前提となる法令の最新版を確認する。",
+    },
+    {
+        "topic": "Freelancer protection (outsourced creators/moderators)",
+        "law_title": "特定受託事業者に係る取引の適正化等に関する法律",
+        "why_to_check": "フリーランス委託時の取引適正化・就業環境配慮に関する最新ルールを確認する。",
+    },
 ]
 
 
@@ -145,6 +155,10 @@ def fetch_scope_evidence(scope: dict[str, str], *, asof: str, base_url: str, tim
     law_num = law_info.get("law_num")
     law_title = current_revision.get("law_title") or scope["law_title"]
     law_revision_id = current_revision.get("law_revision_id")
+    updated = current_revision.get("updated")
+    amendment_enforcement_date = current_revision.get("amendment_enforcement_date")
+    amendment_law_title = current_revision.get("amendment_law_title")
+    amendment_law_num = current_revision.get("amendment_law_num")
 
     revisions: dict[str, Any] = {}
     article1: dict[str, Any] = {}
@@ -177,6 +191,10 @@ def fetch_scope_evidence(scope: dict[str, str], *, asof: str, base_url: str, tim
         "law_id": law_id,
         "law_num": law_num,
         "law_revision_id": law_revision_id,
+        "updated": updated,
+        "amendment_enforcement_date": amendment_enforcement_date,
+        "amendment_law_title": amendment_law_title,
+        "amendment_law_num": amendment_law_num,
         "laws_search_result": search_result,
         "law_revisions_result": revisions,
         "article1_result": article1,
@@ -200,15 +218,16 @@ def build_markdown(pack: dict[str, Any]) -> str:
     lines.append("4. Request licensed legal review before publication.")
     lines.append("")
     lines.append("## Coverage Summary")
-    lines.append("| Topic | Law title | Law num | law_id | law_revision_id |")
-    lines.append("| --- | --- | --- | --- | --- |")
+    lines.append("| Topic | Law title | law_id | law_revision_id | Updated | Amendment enforcement date |")
+    lines.append("| --- | --- | --- | --- | --- | --- |")
     for item in pack["items"]:
         if not item.get("found"):
-            lines.append(f"| {item['topic']} | (not found) | - | - | - |")
+            lines.append(f"| {item['topic']} | (not found) | - | - | - | - |")
             continue
         lines.append(
-            f"| {item['topic']} | {item.get('law_title','')} | "
-            f"{item.get('law_num','')} | {item.get('law_id','')} | {item.get('law_revision_id','')} |"
+            f"| {item['topic']} | {item.get('law_title','')} | {item.get('law_id','')} | "
+            f"{item.get('law_revision_id','')} | {item.get('updated','')} | "
+            f"{item.get('amendment_enforcement_date','')} |"
         )
     lines.append("")
     lines.append("## Per-Law Notes")
@@ -223,6 +242,10 @@ def build_markdown(pack: dict[str, Any]) -> str:
         lines.append(f"- Law num: `{item.get('law_num', '')}`")
         lines.append(f"- law_id: `{item.get('law_id', '')}`")
         lines.append(f"- law_revision_id: `{item.get('law_revision_id', '')}`")
+        lines.append(f"- updated: `{item.get('updated', '')}`")
+        lines.append(f"- amendment_enforcement_date: `{item.get('amendment_enforcement_date', '')}`")
+        lines.append(f"- amendment_law_title: `{item.get('amendment_law_title', '')}`")
+        lines.append(f"- amendment_law_num: `{item.get('amendment_law_num', '')}`")
         lines.append("- Suggested next command:")
         lines.append("```bash")
         lines.append(

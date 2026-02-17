@@ -72,3 +72,8 @@ egov-law keyword --keyword '業務委託' --limit 5
 - `examples/ios_legal_draft_evidence.py`
 - `examples/ios_legal_draft_workflow.md`
 - `references/egov-law-api-v2-quick-reference.md`
+
+## iOS Drafting Notes
+
+- For iOS Terms/Privacy drafting, run `examples/ios_legal_draft_evidence.py` first.
+- The sample output includes recent-change checkpoints (for example tax and freelancer-protection law topics) with `updated` and `amendment_enforcement_date`.
