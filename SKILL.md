@@ -5,8 +5,8 @@ description: Use this skill when identifying, verifying, and quoting Japanese la
 
 # Japan e-Gov Law API Docs
 
-Note: This `SKILL.md` is kept for Codex compatibility.  
-Claude standard command interface is `.claude/commands/legal-jp-egov-api.md`.
+This repository provides both interfaces:  
+Codex uses `SKILL.md`, and Claude uses `.claude/commands/legal-jp-egov-api.md`.
 
 ## Overview
 

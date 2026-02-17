@@ -2,7 +2,7 @@
 
 言語: [English](README.md) | [日本語](README.ja.md)
 
-e-Gov法令API v2（公式）を使って、日本法令の探索・確認を行うための Claude対応標準パッケージと、すぐ使える CLI / MCP サーバーです。
+e-Gov法令API v2（公式）を使って、日本法令の探索・確認を行うための Claude / Codex 両対応パッケージと、すぐ使える CLI / MCP サーバーです。
 
 ## このskillでできること
 
@@ -35,7 +35,7 @@ e-Gov法令API v2（公式）を使って、日本法令の探索・確認を行
     └── mcp_server.py
 ```
 
-## Claudeで使う（標準）
+## Claudeで使う
 
 1. このリポジトリを clone
 2. Claude Code のワークスペースとしてこのフォルダを開く
@@ -61,14 +61,19 @@ uv run python scripts/egov_law_mcp_server.py
 
 `python3 scripts/egov_law_mcp_server.py` で `Missing dependency: mcp` が出る場合は `uv sync` を先に実行してください。
 
-## Codexでの利用（オプション）
+## Codexで使う
 
-Codex向け互換インターフェースはオプションとして提供しています。
+Codex向けインターフェースはClaude向けと機能差なく利用できます。
 Codex用の主なファイルは `SKILL.md` と `agents/openai.yaml` です。
 
 ```text
 Use $japan-egov-law-api-docs to identify relevant Japanese laws from e-Gov API v2 and return citation-ready evidence with law IDs and timestamps.
 ```
+
+## インターフェースの差分
+
+- ClaudeとCodexで、法令検索・改正確認・証跡出力の機能差はありません。
+- 違いは入口のみ（`.claude/commands/...` と `SKILL.md` / クライアント設定）です。
 
 ## CLI（インストール不要）
 
