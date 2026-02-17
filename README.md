@@ -79,6 +79,8 @@ python3 scripts/egov_law_api.py law-data \
   --elm 'MainProvision-Article[1]'
 ```
 
+Note: CLI prints source-attribution guidance to `stderr` on successful runs.
+
 ## Installable CLI Commands
 
 ```bash
@@ -108,6 +110,8 @@ egov-law-mcp
 - `egov_get_law_revisions`
 - `egov_download_law_file`
 - `egov_download_attachment`
+
+All MCP responses include a `source_terms` object with terms URL and attribution templates.
 
 ## MCP Client Config Example
 

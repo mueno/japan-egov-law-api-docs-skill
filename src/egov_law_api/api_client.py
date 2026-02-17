@@ -11,6 +11,12 @@ from urllib import error, parse, request
 
 DEFAULT_BASE_URL = os.environ.get("EGOV_LAW_API_BASE_URL", "https://laws.e-gov.go.jp/api/2")
 DEFAULT_TIMEOUT = float(os.environ.get("EGOV_LAW_API_TIMEOUT_SECONDS", "30"))
+E_GOV_TERMS_URL = "https://laws.e-gov.go.jp/terms/"
+E_GOV_ATTRIBUTION_TEMPLATE = "出典: e-Gov法令検索 (https://laws.e-gov.go.jp/) （YYYY年MM月DD日利用）"
+E_GOV_EDIT_NOTICE_TEMPLATE = "本資料は e-Gov法令検索の情報をもとに作成し、編集・加工しています。"
+E_GOV_USAGE_NOTE = (
+    "再配布時はe-Gov利用規約に従い、出典表示と必要な改変明示を行ってください。"
+)
 
 
 @dataclass(frozen=True)
@@ -125,3 +131,13 @@ def write_binary_output(path: str | None, fallback: str, payload: bytes) -> Path
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_bytes(payload)
     return out_path
+
+
+def source_terms() -> dict[str, str]:
+    """Return reusable source attribution metadata for e-Gov-derived outputs."""
+    return {
+        "terms_url": E_GOV_TERMS_URL,
+        "attribution_template": E_GOV_ATTRIBUTION_TEMPLATE,
+        "edited_content_template": E_GOV_EDIT_NOTICE_TEMPLATE,
+        "usage_note": E_GOV_USAGE_NOTE,
+    }

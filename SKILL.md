@@ -35,6 +35,7 @@ citation-ready legal research outputs with explicit identifiers and timestamps.
 - For every substantive statement, provide:
   `law_title`, `law_num`, `law_id`, `law_revision_id`, API endpoint, and
   retrieval timestamp.
+- Include e-Gov source terms metadata (terms URL + attribution template).
 - Mark any interpretation as inference, not as raw statutory fact.
 
 ## Quick Start

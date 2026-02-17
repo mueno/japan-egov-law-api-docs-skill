@@ -21,6 +21,7 @@ from .api_client import (
     decode_bytes,
     parse_json_text,
     request_endpoint,
+    source_terms,
     write_binary_output,
 )
 
@@ -151,6 +152,7 @@ def _success_json(
             "status": status,
             "url": url,
             "retrieved_at_utc": datetime.now(timezone.utc).isoformat(),
+            "source_terms": source_terms(),
             "data": _decode_response_payload(headers, body),
         }
     )
@@ -172,6 +174,7 @@ def _http_error_json(
             "http_status": status,
             "url": url,
             "error_body": _sanitize_text(body_text, max_len=1200),
+            "source_terms": source_terms(),
         }
     )
 
@@ -388,6 +391,7 @@ async def egov_download_law_file(
                 "status": response.status,
                 "url": response.url,
                 "retrieved_at_utc": datetime.now(timezone.utc).isoformat(),
+                "source_terms": source_terms(),
                 "saved_to": str(saved_to.resolve()),
                 "bytes": len(response.body),
             }
@@ -439,6 +443,7 @@ async def egov_download_attachment(
                 "status": response.status,
                 "url": response.url,
                 "retrieved_at_utc": datetime.now(timezone.utc).isoformat(),
+                "source_terms": source_terms(),
                 "saved_to": str(saved_to.resolve()),
                 "bytes": len(response.body),
             }

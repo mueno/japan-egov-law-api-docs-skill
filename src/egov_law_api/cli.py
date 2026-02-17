@@ -12,6 +12,10 @@ from .api_client import (
     DEFAULT_BASE_URL,
     DEFAULT_TIMEOUT,
     bool_query,
+    E_GOV_ATTRIBUTION_TEMPLATE,
+    E_GOV_EDIT_NOTICE_TEMPLATE,
+    E_GOV_TERMS_URL,
+    E_GOV_USAGE_NOTE,
     format_payload,
     parse_query_items,
     request_endpoint,
@@ -32,7 +36,20 @@ def _run_json_like(args: argparse.Namespace, path: str, query: dict[str, object]
         print(format_payload(response.body, response.headers, raw=True))
         return 1
     print(format_payload(response.body, response.headers, raw=args.raw))
+    _print_source_notice()
     return 0
+
+
+def _print_source_notice() -> None:
+    print(
+        (
+            f"[Source Terms] {E_GOV_USAGE_NOTE}\n"
+            f"[Source Terms] terms: {E_GOV_TERMS_URL}\n"
+            f"[Source Terms] attribution: {E_GOV_ATTRIBUTION_TEMPLATE}\n"
+            f"[Source Terms] edited-content: {E_GOV_EDIT_NOTICE_TEMPLATE}"
+        ),
+        file=sys.stderr,
+    )
 
 
 def command_search_law(args: argparse.Namespace) -> int:
@@ -118,6 +135,7 @@ def command_law_file(args: argparse.Namespace) -> int:
     fallback_name = f"law_file_{args.law_id_or_num_or_revision_id}.{args.file_type}"
     output = write_binary_output(args.output, fallback_name, response.body)
     print(str(output))
+    _print_source_notice()
     return 0
 
 
@@ -140,6 +158,7 @@ def command_attachment(args: argparse.Namespace) -> int:
     fallback_name = Path(args.src).name if args.src else f"attachment_{args.law_revision_id}.zip"
     output = write_binary_output(args.output, fallback_name, response.body)
     print(str(output))
+    _print_source_notice()
     return 0
 
 
