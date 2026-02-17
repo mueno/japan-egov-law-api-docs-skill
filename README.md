@@ -18,6 +18,9 @@ verification using the official e-Gov Law API v2.
 ├── SKILL.md
 ├── agents/openai.yaml
 ├── pyproject.toml
+├── examples/
+│   ├── ios_legal_draft_evidence.py
+│   └── ios_legal_draft_workflow.md
 ├── references/egov-law-api-v2-quick-reference.md
 ├── scripts/egov_law_api.py
 ├── scripts/egov_law_mcp_server.py
@@ -102,6 +105,20 @@ egov-law-mcp
   }
 }
 ```
+
+## iOS Legal Draft Examples
+
+Run sample evidence generation for iOS Terms/Privacy drafting:
+
+```bash
+python3 examples/ios_legal_draft_evidence.py --output-dir examples/output
+```
+
+Then use:
+
+- `examples/output/ios_legal_evidence_pack.json`
+- `examples/output/ios_legal_draft_checklist.md`
+- `examples/ios_legal_draft_workflow.md`
 
 ## Validation
 

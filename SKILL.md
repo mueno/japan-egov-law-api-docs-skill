@@ -69,4 +69,6 @@ egov-law keyword --keyword '業務委託' --limit 5
 - `scripts/egov_law_api.py`
 - `scripts/egov_law_mcp_server.py`
 - `src/egov_law_api/`
+- `examples/ios_legal_draft_evidence.py`
+- `examples/ios_legal_draft_workflow.md`
 - `references/egov-law-api-v2-quick-reference.md`

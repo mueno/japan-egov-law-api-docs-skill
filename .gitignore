@@ -23,3 +23,8 @@ venv/
 # Editor settings
 .vscode/
 .idea/
+
+# Example outputs
+examples/output/*.json
+examples/output/*.md
+!examples/output/.gitkeep

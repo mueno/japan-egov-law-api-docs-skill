@@ -15,6 +15,7 @@ Run the following checks before submitting:
 ```bash
 python3 -m py_compile scripts/egov_law_api.py
 python3 -m py_compile scripts/egov_law_mcp_server.py
+python3 -m py_compile examples/ios_legal_draft_evidence.py
 python3 scripts/egov_law_api.py --help
 python3 -m py_compile src/egov_law_api/*.py
 ```
