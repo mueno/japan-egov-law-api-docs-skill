@@ -134,7 +134,7 @@ python3 examples/ios_legal_draft_evidence.py --output-dir examples/output
 - `examples/output/ios_legal_draft_checklist.md`
 - `examples/ios_legal_draft_workflow.md`
 
-直近改正影響の大きいテーマ（例: `消費税法`, `特定受託事業者に係る取引の適正化等に関する法律`）も含みます。
+iOS利用規約/プライバシーポリシー草稿で基本となる法令（`個人情報の保護に関する法律`、`電気通信事業法`、`消費者契約法`、`特定商取引に関する法律`）を含みます。
 
 ## 検証
 

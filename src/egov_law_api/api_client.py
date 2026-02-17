@@ -16,6 +16,7 @@ E_GOV_ATTRIBUTION_TEMPLATE = "出典: e-Gov法令検索 (https://laws.e-gov.go.j
 E_GOV_EDIT_NOTICE_TEMPLATE = "本資料は e-Gov法令検索の情報をもとに作成し、編集・加工しています。"
 E_GOV_USAGE_NOTE = (
     "再配布時はe-Gov利用規約に従い、出典表示と必要な改変明示を行ってください。"
+    " 本ツールの出力は法令情報の取得・草稿支援のみを目的としており、法的助言ではありません。"
 )
 
 

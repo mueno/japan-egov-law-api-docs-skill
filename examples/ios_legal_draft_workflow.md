@@ -2,9 +2,11 @@
 
 このドキュメントは、e-Gov法令検索skillを使って草稿の根拠確認を行うための実践テンプレートです。
 
-デフォルトで以下の「直近改正が実務影響しやすいテーマ」も含めて証跡化します。
-- 消費税法
-- フリーランス保護法（特定受託事業者に係る取引の適正化等に関する法律）
+デフォルトで以下の「iOS利用規約/プライバシーポリシーで基本となる法令」を証跡化します。
+- 個人情報の保護に関する法律
+- 電気通信事業法（外部送信規律）
+- 消費者契約法
+- 特定商取引に関する法律
 
 ## 1. 証跡パックを作る
 
@@ -61,18 +63,18 @@ Do not provide legal advice or legality conclusions; provide draft-support notes
 }
 ```
 
-消費税法（現行改正の確認）:
+特定商取引法（有料プラン表示の確認）:
 
 ```bash
-egov-law search-law --law-title '消費税法' --limit 1
-egov-law revisions --law-id-or-num 363AC0000000108
+egov-law search-law --law-title '特定商取引に関する法律' --limit 1
+egov-law revisions --law-id-or-num 351AC0000000057
 ```
 
-フリーランス保護法（正式法名で確認）:
+個人情報保護法（最新版確認）:
 
 ```bash
-egov-law search-law --law-title '特定受託事業者に係る取引の適正化等に関する法律' --limit 1
-egov-law revisions --law-id-or-num 505AC0000000025
+egov-law search-law --law-title '個人情報の保護に関する法律' --limit 1
+egov-law revisions --law-id-or-num 415AC0000000057
 ```
 
 ## 5. 草稿運用のコツ
@@ -95,6 +97,8 @@ egov-law revisions --law-id-or-num 505AC0000000025
 ※編集版を「国が作成した資料」のように見せる表現は避けてください。
 
 ## 7. 非弁行為回避の運用ルール
+
+本ツールは法令テキストの検索・取得・証跡化を行うものであり、弁護士法第72条に定める法律事務（鑑定・代理・仲裁・和解等）を提供するものではありません。以下の運用ルールを遵守してください。
 
 1. 出力の用途を「法令情報整理」「草稿支援」に限定する。
 2. 個別案件の適法性判断、紛争対応方針、交渉方針は出力させない。
