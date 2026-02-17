@@ -164,6 +164,13 @@ uv run python scripts/egov_law_mcp_server.py  # start MCP server
 - Semantic versioning is recommended (`v0.1.0`, `v0.1.1`, ...).
 - Use GitHub Releases for each tagged version with a short changelog.
 
+## Branching and PR Workflow
+
+- Use short-lived topic branches (`feature/*`, `fix/*`, `docs/*`, `chore/*`).
+- Open PRs to `main` and avoid direct pushes to `main`.
+- Keep PRs small and squash-merge after review/checks.
+- See `CONTRIBUTING.md` for details.
+
 ## Suggested GitHub Topics
 
 - `codex-skill`

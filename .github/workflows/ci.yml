@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Setup Python
+        run: uv python install 3.12
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Compile source
+        run: |
+          python3 -m py_compile src/egov_law_api/*.py
+          python3 -m py_compile scripts/egov_law_api.py scripts/egov_law_mcp_server.py
+          python3 -m py_compile examples/ios_legal_draft_evidence.py
+
+      - name: Smoke test CLI help
+        run: uv run python scripts/egov_law_api.py --help

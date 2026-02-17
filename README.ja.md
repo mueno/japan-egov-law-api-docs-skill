@@ -142,6 +142,13 @@ uv run python scripts/egov_law_mcp_server.py
 - セマンティックバージョニング推奨（`v0.1.0` など）
 - タグごとに GitHub Releases を作成し、変更点を明記
 
+## ブランチ運用とPR
+
+- 短命ブランチ（`feature/*`, `fix/*`, `docs/*`, `chore/*`）を使用
+- `main` へは直接pushせず、PR経由で反映
+- PRは小さく保ち、レビュー/チェック後に squash merge 推奨
+- 詳細は `CONTRIBUTING.md` を参照
+
 ## ライセンスと利用条件
 
 - リポジトリのコード/ドキュメント: MIT（`LICENSE`）
