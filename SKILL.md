@@ -62,6 +62,8 @@ egov-law keyword --keyword '業務委託' --limit 5
 - Treat e-Gov API responses as primary-source snapshots.
 - Always keep law identifiers and retrieval timestamp in outputs.
 - Distinguish legal text (fact) from interpretation (opinion).
+- Do not provide legal advice, case-specific legal conclusions, or dispute strategy.
+- Do not present output as a substitute for attorney consultation.
 - Escalate final legal judgment to licensed professionals.
 
 ## Resources
@@ -77,3 +79,4 @@ egov-law keyword --keyword '業務委託' --limit 5
 
 - For iOS Terms/Privacy drafting, run `examples/ios_legal_draft_evidence.py` first.
 - The sample output includes recent-change checkpoints (for example tax and freelancer-protection law topics) with `updated` and `amendment_enforcement_date`.
+- Keep all generated text as draft/reference material and require attorney review before publication.

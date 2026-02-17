@@ -35,6 +35,7 @@ Use $japan-egov-law-api-docs to verify Japanese legal sources for my iOS privacy
 Focus on APPI and telecom external-transmission requirements.
 Return law_title, law_num, law_id, law_revision_id, endpoint, and retrieval timestamp for each claim.
 Separate factual quotes from interpretation.
+Do not provide legal advice or legality conclusions; provide draft-support notes only.
 ```
 
 ## 4. MCPツール呼び出し例
@@ -80,5 +81,11 @@ egov-law revisions --law-id-or-num 505AC0000000025
 2. 法令本文は原文ベースで確認し、草稿では平易化しすぎない。
 3. 根拠ID（`law_id`, `law_revision_id`）はレビューコメントに残す。
 4. 公開前に必ず弁護士レビューを実施する。
+
+## 6. 非弁行為回避の運用ルール
+
+1. 出力の用途を「法令情報整理」「草稿支援」に限定する。
+2. 個別案件の適法性判断、紛争対応方針、交渉方針は出力させない。
+3. 対外説明（ユーザー向け最終文言・契約条項確定）は弁護士レビュー後に確定する。
 
 > この資料は法的助言ではありません。最終判断は有資格者のレビューを前提にしてください。

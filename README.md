@@ -147,5 +147,14 @@ python3 scripts/egov_law_mcp_server.py  # start MCP server
 
 ## Safety Note
 
-This skill retrieves primary-source legal text. It does not provide legal advice.
-Final legal decisions should be reviewed by qualified professionals.
+This skill is for primary-source retrieval and drafting support only.
+It does not provide legal advice, legal opinion, or case-specific legality judgment.
+
+Do not use this skill output as:
+
+- a substitute for attorney consultation,
+- a final determination of legality/illegality,
+- litigation/dispute strategy advice,
+- final contract/policy text without qualified legal review.
+
+Final legal decisions must be reviewed by qualified professionals.
