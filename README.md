@@ -182,6 +182,14 @@ Important: This repository license does not replace e-Gov content terms. If you
 redistribute outputs containing e-Gov law content, follow `NOTICE.md` for source
 attribution and edited-content labeling.
 
+## Acknowledgements
+
+We sincerely thank the e-Gov Law Search team and related contributors for making
+official legal information publicly accessible via e-Gov Law API v2.
+
+This repository is an independent community project and is not endorsed by, or
+affiliated with, the Japanese government or the Digital Agency.
+
 ## Safety Note
 
 This skill is for primary-source retrieval and drafting support only.
