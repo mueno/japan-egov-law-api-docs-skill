@@ -86,5 +86,5 @@ egov-law keyword --keyword '業務委託' --limit 5
 ## iOS Drafting Notes
 
 - For iOS Terms/Privacy drafting, run `examples/ios_legal_draft_evidence.py` first.
-- The sample output includes recent-change checkpoints (for example tax and freelancer-protection law topics) with `updated` and `amendment_enforcement_date`.
+- The sample output focuses on iOS draft-relevant laws (APPI, telecom external-transmission, consumer contract, and Tokushoho) with `updated` and `amendment_enforcement_date`.
 - Keep all generated text as draft/reference material and require attorney review before publication.

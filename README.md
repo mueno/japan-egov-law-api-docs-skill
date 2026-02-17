@@ -153,10 +153,12 @@ Then use:
 - `examples/output/ios_legal_draft_checklist.md`
 - `examples/ios_legal_draft_workflow.md`
 
-The sample includes recent-change-sensitive themes such as:
+The sample focuses on iOS draft-relevant laws such as:
 
-- `消費税法`
-- `特定受託事業者に係る取引の適正化等に関する法律` (freelancer protection)
+- `個人情報の保護に関する法律`
+- `電気通信事業法`
+- `消費者契約法`
+- `特定商取引に関する法律`
 
 ## Validation
 
