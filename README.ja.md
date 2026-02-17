@@ -149,6 +149,21 @@ uv run python scripts/egov_law_mcp_server.py
 - PRは小さく保ち、レビュー/チェック後に squash merge 推奨
 - 詳細は `CONTRIBUTING.md` を参照
 
+## 公開後のリポジトリ保護設定
+
+private かつプラン制約で branch protection API が使えない場合は、
+公開（public）に切り替えた直後に次を実行してください。
+
+```bash
+scripts/setup_repo_protection.sh --apply mueno/japan-egov-law-api-docs-skill main
+```
+
+このスクリプトで以下を一括設定します。
+
+- Vulnerability Alerts
+- Automated Security Fixes
+- `main` の branch protection（PRレビュー必須 + `validate` チェック必須）
+
 ## ライセンスと利用条件
 
 - リポジトリのコード/ドキュメント: MIT（`LICENSE`）

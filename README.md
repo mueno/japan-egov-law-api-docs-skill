@@ -171,6 +171,21 @@ uv run python scripts/egov_law_mcp_server.py  # start MCP server
 - Keep PRs small and squash-merge after review/checks.
 - See `CONTRIBUTING.md` for details.
 
+## Repository Hardening (After Public Visibility)
+
+If the repository is private under a plan that blocks branch protection APIs,
+make it public first and then run:
+
+```bash
+scripts/setup_repo_protection.sh --apply mueno/japan-egov-law-api-docs-skill main
+```
+
+This script enables:
+
+- vulnerability alerts
+- automated security fixes
+- branch protection for `main` (PR review + required check `validate`)
+
 ## Suggested GitHub Topics
 
 - `codex-skill`
