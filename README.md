@@ -1,5 +1,7 @@
 # japan-egov-law-api-docs
 
+Language: [English](README.md) | [日本語](README.ja.md)
+
 Codex skill plus ready-to-run CLI and MCP server for Japanese law discovery and
 verification using the official e-Gov Law API v2.
 
@@ -15,6 +17,7 @@ verification using the official e-Gov Law API v2.
 
 ```text
 .
+├── README.ja.md
 ├── SKILL.md
 ├── NOTICE.md
 ├── THIRD_PARTY_NOTICES.md
