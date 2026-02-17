@@ -16,6 +16,7 @@ verification using the official e-Gov Law API v2.
 ```text
 .
 ├── SKILL.md
+├── NOTICE.md
 ├── agents/openai.yaml
 ├── pyproject.toml
 ├── examples/
@@ -36,6 +37,23 @@ verification using the official e-Gov Law API v2.
 2. Place this folder under your Codex skills directory:
    - Typical path: `~/.codex/skills/japan-egov-law-api-docs`
 3. Confirm `SKILL.md` and `agents/openai.yaml` are present.
+
+## Quick Setup (CLI + MCP)
+
+```bash
+cd /ABSOLUTE/PATH/TO/japan-egov-law-api-docs-skill
+uv sync
+uv run python scripts/egov_law_api.py --help
+```
+
+Start MCP server:
+
+```bash
+uv run python scripts/egov_law_mcp_server.py
+```
+
+If you run `python3 scripts/egov_law_mcp_server.py` directly and see
+`Missing dependency: mcp`, run `uv sync` first.
 
 ## Use In Codex (Skill)
 
@@ -129,8 +147,8 @@ The sample includes recent-change-sensitive themes such as:
 
 ```bash
 python3 -m py_compile scripts/egov_law_api.py
-python3 scripts/egov_law_api.py --help
-python3 scripts/egov_law_mcp_server.py  # start MCP server
+uv run python scripts/egov_law_api.py --help
+uv run python scripts/egov_law_mcp_server.py  # start MCP server
 ```
 
 ## Versioning and Releases
@@ -145,6 +163,16 @@ python3 scripts/egov_law_mcp_server.py  # start MCP server
 - `egov`
 - `legal-tech`
 
+## License and Terms Alignment
+
+- Repository code/documentation: MIT (`LICENSE`)
+- e-Gov law content usage: follows e-Gov terms (`https://laws.e-gov.go.jp/terms/`)
+- Practical usage rules and templates: `NOTICE.md`
+
+Important: This repository license does not replace e-Gov content terms. If you
+redistribute outputs containing e-Gov law content, follow `NOTICE.md` for source
+attribution and edited-content labeling.
+
 ## Safety Note
 
 This skill is for primary-source retrieval and drafting support only.
@@ -158,3 +186,10 @@ Do not use this skill output as:
 - final contract/policy text without qualified legal review.
 
 Final legal decisions must be reviewed by qualified professionals.
+
+## No Warranty and Liability
+
+To the maximum extent permitted by law, this repository and its outputs are
+provided "AS IS" without warranties, and the providers/authors (including
+AllNew LLC / 合同会社AllNew and contributors) are not liable for any damages
+arising from use of this repository or its outputs.

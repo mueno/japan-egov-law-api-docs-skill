@@ -58,6 +58,14 @@ LAW_SCOPES = [
     },
 ]
 
+E_GOV_TERMS_URL = "https://laws.e-gov.go.jp/terms/"
+ATTRIBUTION_TEMPLATE = "出典: e-Gov法令検索 (https://laws.e-gov.go.jp/) （YYYY年MM月DD日利用）"
+EDIT_NOTICE_TEMPLATE = "本資料は e-Gov法令検索の情報をもとに作成し、当社で編集・加工しています。"
+DISCLAIMER_TEXT = (
+    "This material is for legal-source retrieval and draft support only. "
+    "It is not legal advice or legality judgment."
+)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -213,6 +221,20 @@ def build_markdown(pack: dict[str, Any]) -> str:
     lines.append("> It is not legal advice, legality judgment, or dispute strategy guidance.")
     lines.append("> Final legal review must be done by qualified professionals.")
     lines.append("")
+    lines.append("## Source Attribution and Terms")
+    lines.append(f"- Terms URL: `{pack['source_terms']['terms_url']}`")
+    lines.append("- Attribution template:")
+    lines.append("```text")
+    lines.append(pack["source_terms"]["attribution_template"])
+    lines.append("```")
+    lines.append("- Edited-content template:")
+    lines.append("```text")
+    lines.append(pack["source_terms"]["edited_content_template"])
+    lines.append("```")
+    lines.append(
+        "- Do not present edited/processed output as if it was authored by the Japanese government."
+    )
+    lines.append("")
     lines.append("## Drafting Flow")
     lines.append("1. Use this evidence pack to decide which clauses need legal text support.")
     lines.append("2. Draft policy clauses in plain language aligned to app behavior.")
@@ -279,6 +301,12 @@ def main() -> int:
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "base_url": args.base_url,
         "asof": args.asof,
+        "source_terms": {
+            "terms_url": E_GOV_TERMS_URL,
+            "attribution_template": ATTRIBUTION_TEMPLATE,
+            "edited_content_template": EDIT_NOTICE_TEMPLATE,
+            "disclaimer": DISCLAIMER_TEXT,
+        },
         "items": items,
     }
 

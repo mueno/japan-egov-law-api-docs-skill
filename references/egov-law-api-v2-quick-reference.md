@@ -8,6 +8,19 @@ Primary spec source: `https://laws.e-gov.go.jp/api/2/swagger-ui/lawapi-v2.yaml`
 - Swagger UI: `https://laws.e-gov.go.jp/api/2/swagger-ui/`
 - Redoc: `https://laws.e-gov.go.jp/api/2/redoc/`
 - API base: `https://laws.e-gov.go.jp/api/2`
+- Terms: `https://laws.e-gov.go.jp/terms/`
+
+## Terms and Reuse Checklist
+
+When redistributing outputs that include e-Gov law content:
+
+1. Add source attribution (`出典`) with URL and use date.
+2. If edited/processed, explicitly state edits were made.
+3. Do not present edited output as government-authored.
+4. Check for out-of-scope content (logos/symbols or separately licensed items).
+5. Treat source data as "as-is" (no accuracy/completeness/latestness guarantee).
+
+See `NOTICE.md` for reusable templates.
 
 ## Core Endpoints
 

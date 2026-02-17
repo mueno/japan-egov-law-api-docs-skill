@@ -1,4 +1,4 @@
 interface:
   display_name: "Japan e-Gov Law API Docs"
   short_description: "Find and verify Japanese laws via e-Gov API v2."
-  default_prompt: "Use $japan-egov-law-api-docs to identify relevant Japanese laws from e-Gov API v2 and return citation-ready evidence with law IDs and timestamps."
+  default_prompt: "Use $japan-egov-law-api-docs to identify relevant Japanese laws from e-Gov API v2 and return citation-ready evidence with law IDs and timestamps. Provide draft-support notes only, not legal advice."
