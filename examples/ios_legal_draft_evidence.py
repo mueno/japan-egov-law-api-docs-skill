@@ -46,16 +46,6 @@ LAW_SCOPES = [
         "law_title": "特定商取引に関する法律",
         "why_to_check": "有料プラン・継続課金の表示義務や通信販売表示の必要性を確認する。",
     },
-    {
-        "topic": "Tax handling for paid features",
-        "law_title": "消費税法",
-        "why_to_check": "有料機能・課金時の税務説明や表示整合の前提となる法令の最新版を確認する。",
-    },
-    {
-        "topic": "Freelancer protection (outsourced creators/moderators)",
-        "law_title": "特定受託事業者に係る取引の適正化等に関する法律",
-        "why_to_check": "フリーランス委託時の取引適正化・就業環境配慮に関する最新ルールを確認する。",
-    },
 ]
 
 E_GOV_TERMS_URL = "https://laws.e-gov.go.jp/terms/"
