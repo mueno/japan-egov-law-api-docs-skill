@@ -37,9 +37,9 @@ LAW_SCOPES = [
         "why_to_check": "外部送信規律（情報送信指令通信）の説明事項を整理する。",
     },
     {
-        "topic": "Consumer-facing terms risk",
+        "topic": "Consumer-facing terms provisions",
         "law_title": "消費者契約法",
-        "why_to_check": "利用規約の無効条項リスク（免責・解除・損害賠償制限）を点検する。",
+        "why_to_check": "消費者契約法上の関連条文（免責・解除・損害賠償制限に関する規定）を特定する。",
     },
     {
         "topic": "Paid plans / subscription disclosure",
@@ -53,7 +53,8 @@ ATTRIBUTION_TEMPLATE = "出典: e-Gov法令検索 (https://laws.e-gov.go.jp/) �
 EDIT_NOTICE_TEMPLATE = "本資料は e-Gov法令検索の情報をもとに作成し、当社で編集・加工しています。"
 DISCLAIMER_TEXT = (
     "This material is for legal-source retrieval and draft support only. "
-    "It is not legal advice or legality judgment."
+    "It is not legal advice or legality judgment. "
+    "本資料は法令情報の取得・草稿支援のみを目的としています。法的助言や適法性の判断ではありません。"
 )
 
 
