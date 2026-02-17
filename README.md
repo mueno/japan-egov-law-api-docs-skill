@@ -17,6 +17,7 @@ verification using the official e-Gov Law API v2.
 .
 ├── SKILL.md
 ├── NOTICE.md
+├── THIRD_PARTY_NOTICES.md
 ├── agents/openai.yaml
 ├── pyproject.toml
 ├── examples/
@@ -172,6 +173,7 @@ uv run python scripts/egov_law_mcp_server.py  # start MCP server
 - Repository code/documentation: MIT (`LICENSE`)
 - e-Gov law content usage: follows e-Gov terms (`https://laws.e-gov.go.jp/terms/`)
 - Practical usage rules and templates: `NOTICE.md`
+- Third-party dependency/tool rights summary: `THIRD_PARTY_NOTICES.md`
 
 Important: This repository license does not replace e-Gov content terms. If you
 redistribute outputs containing e-Gov law content, follow `NOTICE.md` for source

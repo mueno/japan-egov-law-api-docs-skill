@@ -7,6 +7,7 @@ data from e-Gov Law Search.
 
 - Original code and documents in this repository are licensed under MIT.
 - See `LICENSE`.
+- See `THIRD_PARTY_NOTICES.md` for dependency/build-tool rights summary.
 
 ## 2. Upstream Content Terms (e-Gov Law Search)
 
