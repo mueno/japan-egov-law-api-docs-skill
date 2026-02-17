@@ -2,8 +2,8 @@
 
 Language: [English](README.md) | [日本語](README.ja.md)
 
-Codex skill plus ready-to-run CLI and MCP server for Japanese law discovery and
-verification using the official e-Gov Law API v2.
+Claude command/skill-first package plus ready-to-run CLI and MCP server for
+Japanese law discovery and verification using the official e-Gov Law API v2.
 
 ## What This Skill Does
 
@@ -17,6 +17,7 @@ verification using the official e-Gov Law API v2.
 
 ```text
 .
+├── .claude/commands/legal-jp-egov-api.md
 ├── README.ja.md
 ├── SKILL.md
 ├── NOTICE.md
@@ -35,12 +36,15 @@ verification using the official e-Gov Law API v2.
     └── mcp_server.py
 ```
 
-## Install Skill
+## Use In Claude (Standard)
 
 1. Clone this repository.
-2. Place this folder under your Codex skills directory:
-   - Typical path: `~/.codex/skills/japan-egov-law-api-docs`
-3. Confirm `SKILL.md` and `agents/openai.yaml` are present.
+2. Open this folder as your Claude Code workspace.
+3. Use the local command: `/legal-jp-egov-api`
+
+If you want to reuse the command in another workspace, copy:
+
+- `.claude/commands/legal-jp-egov-api.md`
 
 ## Quick Setup (CLI + MCP)
 
@@ -59,7 +63,10 @@ uv run python scripts/egov_law_mcp_server.py
 If you run `python3 scripts/egov_law_mcp_server.py` directly and see
 `Missing dependency: mcp`, run `uv sync` first.
 
-## Use In Codex (Skill)
+## Use In Codex (Optional)
+
+Codex compatibility is provided as an optional interface.
+Optional Codex files are `SKILL.md` and `agents/openai.yaml`.
 
 Use trigger prompt:
 
@@ -188,6 +195,7 @@ This script enables:
 
 ## Suggested GitHub Topics
 
+- `claude-code`
 - `codex-skill`
 - `japanese-law`
 - `egov`
