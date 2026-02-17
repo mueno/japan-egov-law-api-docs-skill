@@ -2,7 +2,7 @@
 
 Language: [English](README.md) | [日本語](README.ja.md)
 
-Claude command/skill-first package plus ready-to-run CLI and MCP server for
+Claude and Codex compatible package plus ready-to-run CLI and MCP server for
 Japanese law discovery and verification using the official e-Gov Law API v2.
 
 ## What This Skill Does
@@ -36,7 +36,7 @@ Japanese law discovery and verification using the official e-Gov Law API v2.
     └── mcp_server.py
 ```
 
-## Use In Claude (Standard)
+## Use In Claude
 
 1. Clone this repository.
 2. Open this folder as your Claude Code workspace.
@@ -63,16 +63,21 @@ uv run python scripts/egov_law_mcp_server.py
 If you run `python3 scripts/egov_law_mcp_server.py` directly and see
 `Missing dependency: mcp`, run `uv sync` first.
 
-## Use In Codex (Optional)
+## Use In Codex
 
-Codex compatibility is provided as an optional interface.
-Optional Codex files are `SKILL.md` and `agents/openai.yaml`.
+Codex interface is provided alongside Claude.
+Codex files are `SKILL.md` and `agents/openai.yaml`.
 
 Use trigger prompt:
 
 ```text
 Use $japan-egov-law-api-docs to identify relevant Japanese laws from e-Gov API v2 and return citation-ready evidence with law IDs and timestamps.
 ```
+
+## Interface Parity
+
+- Core retrieval/verification capabilities are the same in Claude and Codex.
+- Differences are only entry points (`.claude/commands/...` vs `SKILL.md`) and client configuration.
 
 ## Quick CLI (No Install)
 
