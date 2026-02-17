@@ -2,8 +2,8 @@
 
 Language: [English](README.md) | [日本語](README.ja.md)
 
-Codex skill plus ready-to-run CLI and MCP server for Japanese law discovery and
-verification using the official e-Gov Law API v2.
+Claude and Codex compatible package plus ready-to-run CLI and MCP server for
+Japanese law discovery and verification using the official e-Gov Law API v2.
 
 ## What This Skill Does
 
@@ -17,6 +17,7 @@ verification using the official e-Gov Law API v2.
 
 ```text
 .
+├── .claude/commands/legal-jp-egov-api.md
 ├── README.ja.md
 ├── SKILL.md
 ├── NOTICE.md
@@ -35,12 +36,15 @@ verification using the official e-Gov Law API v2.
     └── mcp_server.py
 ```
 
-## Install Skill
+## Use In Claude
 
 1. Clone this repository.
-2. Place this folder under your Codex skills directory:
-   - Typical path: `~/.codex/skills/japan-egov-law-api-docs`
-3. Confirm `SKILL.md` and `agents/openai.yaml` are present.
+2. Open this folder as your Claude Code workspace.
+3. Use the local command: `/legal-jp-egov-api`
+
+If you want to reuse the command in another workspace, copy:
+
+- `.claude/commands/legal-jp-egov-api.md`
 
 ## Quick Setup (CLI + MCP)
 
@@ -59,13 +63,21 @@ uv run python scripts/egov_law_mcp_server.py
 If you run `python3 scripts/egov_law_mcp_server.py` directly and see
 `Missing dependency: mcp`, run `uv sync` first.
 
-## Use In Codex (Skill)
+## Use In Codex
+
+Codex interface is provided alongside Claude.
+Codex files are `SKILL.md` and `agents/openai.yaml`.
 
 Use trigger prompt:
 
 ```text
 Use $japan-egov-law-api-docs to identify relevant Japanese laws from e-Gov API v2 and return citation-ready evidence with law IDs and timestamps.
 ```
+
+## Interface Parity
+
+- Core retrieval/verification capabilities are the same in Claude and Codex.
+- Differences are only entry points (`.claude/commands/...` vs `SKILL.md`) and client configuration.
 
 ## Quick CLI (No Install)
 
@@ -146,10 +158,12 @@ Then use:
 - `examples/output/ios_legal_draft_checklist.md`
 - `examples/ios_legal_draft_workflow.md`
 
-The sample includes recent-change-sensitive themes such as:
+The sample focuses on iOS draft-relevant laws such as:
 
-- `消費税法`
-- `特定受託事業者に係る取引の適正化等に関する法律` (freelancer protection)
+- `個人情報の保護に関する法律`
+- `電気通信事業法`
+- `消費者契約法`
+- `特定商取引に関する法律`
 
 ## Validation
 
@@ -171,8 +185,24 @@ uv run python scripts/egov_law_mcp_server.py  # start MCP server
 - Keep PRs small and squash-merge after review/checks.
 - See `CONTRIBUTING.md` for details.
 
+## Repository Hardening (After Public Visibility)
+
+If the repository is private under a plan that blocks branch protection APIs,
+make it public first and then run:
+
+```bash
+scripts/setup_repo_protection.sh --apply mueno/japan-egov-law-api-docs-skill main
+```
+
+This script enables:
+
+- vulnerability alerts
+- automated security fixes
+- branch protection for `main` (PR review + required check `validate`)
+
 ## Suggested GitHub Topics
 
+- `claude-code`
 - `codex-skill`
 - `japanese-law`
 - `egov`
