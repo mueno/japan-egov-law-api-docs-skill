@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "japan-egov-law-api": {
+      "command": "python3",
+      "args": [
+        "/ABSOLUTE/PATH/TO/japan-egov-law-api-docs-skill/scripts/egov_law_mcp_server.py"
+      ]
+    }
+  }
+}
