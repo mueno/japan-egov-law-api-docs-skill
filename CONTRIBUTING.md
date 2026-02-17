@@ -29,7 +29,7 @@ Recommended flow:
 
 1. Open an issue first for major changes and discuss scope.
 2. Keep changes focused and minimal.
-3. Update `SKILL.md` and `references/` when behavior changes.
+3. Update `.claude/commands/legal-jp-egov-api.md`, `SKILL.md`, and `references/` when behavior changes.
 4. Keep `NOTICE.md` aligned when attribution/disclaimer behavior changes.
 
 ## Local Checks
